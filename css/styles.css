@@ -113,8 +113,18 @@ ul {
 
 .section-header {
   text-align: center;
-  max-width: 760px;
+  max-width: 1000px;
   margin: 0 auto 4rem auto;
+}
+
+.single-line-title {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .single-line-title {
+    white-space: normal;
+  }
 }
 
 .section-badge {
