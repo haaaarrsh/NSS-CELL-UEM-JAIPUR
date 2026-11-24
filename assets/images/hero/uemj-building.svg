@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f2027" />
+      <stop offset="40%" stop-color="#203a43" />
+      <stop offset="100%" stop-color="#2c5364" />
+    </linearGradient>
+    <linearGradient id="domeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37" />
+      <stop offset="50%" stop-color="#f3e5ab" />
+      <stop offset="100%" stop-color="#aa7c11" />
+    </linearGradient>
+    <linearGradient id="buildingRedStone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c94b4b" />
+      <stop offset="50%" stop-color="#a83232" />
+      <stop offset="100%" stop-color="#721c24" />
+    </linearGradient>
+    <linearGradient id="lawnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1b4332" />
+      <stop offset="100%" stop-color="#081c15" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Sky & Atmospheric Lighting -->
+  <rect width="1920" height="1080" fill="url(#skyGrad)"/>
+  
+  <!-- Subtle Moon & Stars / Atmospheric Aura -->
+  <circle cx="1650" cy="220" r="70" fill="#fffbe6" opacity="0.8" filter="url(#glow)"/>
+  
+  <!-- Distant Aravalli Hills Horizon (Jaipur landscape) -->
+  <path d="M 0,650 Q 250,550 500,630 T 1000,580 T 1500,620 T 1920,590 L 1920,800 L 0,800 Z" fill="#14213d" opacity="0.7"/>
+  <path d="M 0,680 Q 300,620 650,670 T 1300,640 T 1920,660 L 1920,820 L 0,820 Z" fill="#1b263b" opacity="0.9"/>
+
+  <!-- Academic Building (UEM Jaipur Iconic Gurukul Block) -->
+  <!-- Base Foundation Platform -->
+  <rect x="260" y="520" width="1400" height="260" rx="4" fill="url(#buildingRedStone)"/>
+  <!-- Decorative Parapet / Cornice -->
+  <rect x="230" y="500" width="1460" height="28" fill="#e9c46a"/>
+  
+  <!-- Central Grand Rotunda / Tower Base -->
+  <rect x="760" y="320" width="400" height="200" fill="#b03a2e"/>
+  
+  <!-- Iconic Grand Central Dome of UEM Jaipur -->
+  <!-- Dome base drum -->
+  <rect x="790" y="270" width="340" height="60" fill="#e9c46a"/>
+  <!-- Windows on dome drum -->
+  <g fill="#203a43">
+    <rect x="815" y="282" width="22" height="36" rx="10"/>
+    <rect x="855" y="282" width="22" height="36" rx="10"/>
+    <rect x="895" y="282" width="22" height="36" rx="10"/>
+    <rect x="935" y="282" width="22" height="36" rx="10"/>
+    <rect x="975" y="282" width="22" height="36" rx="10"/>
+    <rect x="1015" y="282" width="22" height="36" rx="10"/>
+    <rect x="1055" y="282" width="22" height="36" rx="10"/>
+  </g>
+  <!-- Main Hemisphere Dome -->
+  <path d="M 800,270 C 800,120 1120,120 1120,270 Z" fill="url(#domeGrad)"/>
+  <!-- Dome Finial / Kalash -->
+  <rect x="955" y="90" width="10" height="32" fill="#aa7c11"/>
+  <circle cx="960" cy="85" r="12" fill="#ffd166"/>
+  <!-- Flag atop dome -->
+  <line x1="960" y1="85" x2="960" y2="40" stroke="#ffd166" stroke-width="4"/>
+  <polygon points="960,40 1005,52 960,64" fill="#ff9933"/>
+
+  <!-- Left & Right Wing Chhatris (Traditional Rajasthani Architecture) -->
+  <!-- Left Chhatri -->
+  <rect x="320" y="440" width="120" height="70" fill="#e9c46a"/>
+  <path d="M 310,440 C 310,380 450,380 450,440 Z" fill="url(#domeGrad)"/>
+  <!-- Right Chhatri -->
+  <rect x="1480" y="440" width="120" height="70" fill="#e9c46a"/>
+  <path d="M 1470,440 C 1470,380 1610,380 1610,440 Z" fill="url(#domeGrad)"/>
+
+  <!-- Grand Pillars / Colonnade -->
+  <g fill="#f8edeb" stroke="#d4af37" stroke-width="2">
+    <rect x="800" y="525" width="22" height="240"/>
+    <rect x="850" y="525" width="22" height="240"/>
+    <rect x="900" y="525" width="22" height="240"/>
+    <rect x="950" y="525" width="22" height="240"/>
+    <rect x="1000" y="525" width="22" height="240"/>
+    <rect x="1050" y="525" width="22" height="240"/>
+    <rect x="1100" y="525" width="22" height="240"/>
+  </g>
+
+  <!-- Wing Windows (Classical arched academic windows) -->
+  <g fill="#ffd166" opacity="0.85">
+    <!-- Left Wing Windows -->
+    <rect x="340" y="560" width="40" height="65" rx="16"/>
+    <rect x="420" y="560" width="40" height="65" rx="16"/>
+    <rect x="500" y="560" width="40" height="65" rx="16"/>
+    <rect x="580" y="560" width="40" height="65" rx="16"/>
+    <rect x="660" y="560" width="40" height="65" rx="16"/>
+    
+    <rect x="340" y="670" width="40" height="65" rx="8"/>
+    <rect x="420" y="670" width="40" height="65" rx="8"/>
+    <rect x="500" y="670" width="40" height="65" rx="8"/>
+    <rect x="580" y="670" width="40" height="65" rx="8"/>
+    <rect x="660" y="670" width="40" height="65" rx="8"/>
+
+    <!-- Right Wing Windows -->
+    <rect x="1220" y="560" width="40" height="65" rx="16"/>
+    <rect x="1300" y="560" width="40" height="65" rx="16"/>
+    <rect x="1380" y="560" width="40" height="65" rx="16"/>
+    <rect x="1460" y="560" width="40" height="65" rx="16"/>
+    <rect x="1540" y="560" width="40" height="65" rx="16"/>
+
+    <rect x="1220" y="670" width="40" height="65" rx="8"/>
+    <rect x="1300" y="670" width="40" height="65" rx="8"/>
+    <rect x="1380" y="670" width="40" height="65" rx="8"/>
+    <rect x="1460" y="670" width="40" height="65" rx="8"/>
+    <rect x="1540" y="670" width="40" height="65" rx="8"/>
+  </g>
+
+  <!-- University Inscription on Grand Portico -->
+  <rect x="780" y="485" width="360" height="35" rx="4" fill="#0b2545" stroke="#f1c40f" stroke-width="2"/>
+  <text x="960" y="508" font-family="'Montserrat', sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">UNIVERSITY OF ENGINEERING &amp; MANAGEMENT</text>
+
+  <!-- Forecourt Steps & Campus Plaza -->
+  <polygon points="150,860 1770,860 1920,1080 0,1080" fill="url(#lawnGrad)"/>
+  
+  <!-- Central Grand Walkway with Pathway Lights -->
+  <polygon points="850,780 1070,780 1200,1080 720,1080" fill="#adb5bd" opacity="0.35"/>
+  <polygon points="890,780 1030,780 1120,1080 800,1080" fill="#dee2e6" opacity="0.25"/>
+
+  <!-- Manicured Campus Palm Trees / Greenery -->
+  <g fill="#2d6a4f">
+    <!-- Left trees -->
+    <ellipse cx="200" cy="760" rx="45" ry="80"/>
+    <ellipse cx="280" cy="770" rx="35" ry="60"/>
+    <ellipse cx="140" cy="790" rx="40" ry="70"/>
+    <!-- Right trees -->
+    <ellipse cx="1720" cy="760" rx="45" ry="80"/>
+    <ellipse cx="1640" cy="770" rx="35" ry="60"/>
+    <ellipse cx="1780" cy="790" rx="40" ry="70"/>
+  </g>
+
+  <!-- Vignette & Warm Academic Lighting Overlay -->
+  <rect width="1920" height="1080" fill="#050e1d" opacity="0.45"/>
+</svg>

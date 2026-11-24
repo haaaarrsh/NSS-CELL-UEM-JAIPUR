@@ -1,0 +1,20 @@
+{
+  "name": "nss-cell-uem-jaipur",
+  "version": "1.0.0",
+  "description": "Official Website for NSS CELL UEM JAIPUR - National Service Scheme, University of Engineering & Management, Jaipur",
+  "main": "index.html",
+  "scripts": {
+    "start": "node serve.js",
+    "serve": "node serve.js",
+    "verify": "node verify-site.js"
+  },
+  "keywords": [
+    "nss",
+    "uemj",
+    "uem-jaipur",
+    "national-service-scheme",
+    "unnat-bharat-abhiyan"
+  ],
+  "author": "NSS CELL UEM JAIPUR",
+  "license": "MIT"
+}
