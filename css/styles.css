@@ -1615,14 +1615,14 @@ ul {
 .social-badge-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.65rem 1.4rem;
-  border-radius: var(--radius-full);
-  font-family: var(--font-subheading);
-  font-size: 0.88rem;
-  font-weight: 700;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.35rem;
   color: #ffffff;
   transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .social-btn-x {
@@ -1641,9 +1641,13 @@ ul {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
 }
 
+.social-btn-youtube {
+  background: #ff0000;
+}
+
 .social-badge-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   color: #ffffff;
 }
 
