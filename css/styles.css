@@ -562,6 +562,7 @@ ul {
 .hero-motto-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   background: rgba(230, 57, 70, 0.25);
   border: 1.5px solid var(--nss-gold);
@@ -574,6 +575,8 @@ ul {
   letter-spacing: 1.5px;
   margin-bottom: 2rem;
   backdrop-filter: blur(8px);
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .hero-btn-group {
@@ -2556,10 +2559,17 @@ textarea.form-control {
   }
 
   .hero-motto-badge {
-    font-size: 0.82rem;
-    padding: 0.35rem 1rem;
-    letter-spacing: 0.8px;
+    font-size: clamp(0.72rem, 3.2vw, 0.85rem);
+    padding: 0.35rem 0.85rem;
+    gap: 0.45rem;
+    letter-spacing: 0.4px;
     margin-bottom: 1.6rem;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+
+  .hero-motto-badge i {
+    font-size: 0.8em;
   }
 
   .hero-btn-group {
@@ -3042,6 +3052,12 @@ textarea.form-control {
     gap: 0.6rem;
     text-align: center;
   }
+
+  .footer-motto-pill {
+    font-size: clamp(0.72rem, 3.1vw, 0.92rem);
+    white-space: nowrap;
+    letter-spacing: 0.4px;
+  }
 }
 
 /* Specific Smartphone Tuning (<= 480px) */
@@ -3099,6 +3115,19 @@ textarea.form-control {
   .hero-subtitle-uem {
     font-size: 0.88rem;
     line-height: 1.35;
+  }
+
+  /* Hero Motto Badge Single Line on Smallest Phones */
+  .hero-motto-badge {
+    font-size: clamp(0.62rem, 3vw, 0.75rem);
+    padding: 0.3rem 0.65rem;
+    gap: 0.35rem;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+
+  .hero-motto-badge i {
+    font-size: 0.75em;
   }
 
   .stat-number {
