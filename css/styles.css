@@ -1766,6 +1766,8 @@ ul {
   padding: 2rem;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-form-box h4 {
@@ -1784,36 +1786,50 @@ ul {
 
 .google-form-highlight-card {
   background: linear-gradient(135deg, rgba(230, 57, 70, 0.08), rgba(247, 127, 0, 0.08));
-  border: 1.5px dashed var(--nss-red);
-  border-radius: var(--radius-sm);
-  padding: 1.25rem;
+  border: 2px dashed var(--nss-red);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 1.8rem;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.google-form-highlight-card:hover {
+  background: linear-gradient(135deg, rgba(230, 57, 70, 0.12), rgba(247, 127, 0, 0.12));
+  border-color: var(--nss-red-dark);
 }
 
 .google-form-highlight-card h5 {
   font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 800;
   color: var(--nss-blue);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
 }
 
 .google-form-highlight-card p {
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 440px;
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
 }
 
 .btn-google-form {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
   background: var(--nss-red);
   color: #ffffff;
-  padding: 0.75rem 1.8rem;
+  padding: 0.85rem 2.2rem;
   border-radius: var(--radius-full);
   font-family: var(--font-subheading);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 800;
   box-shadow: var(--shadow-red);
   transition: var(--transition);
@@ -1821,8 +1837,8 @@ ul {
 
 .btn-google-form:hover {
   background: var(--nss-red-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(230, 57, 70, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(230, 57, 70, 0.45);
 }
 
 /* Built-in Instant Query Form */
