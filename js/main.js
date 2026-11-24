@@ -30,29 +30,55 @@ function initNavbar() {
     }
   });
 
-  // Mobile menu toggle
+  // Mobile menu toggle & backdrop
+  const backdrop = document.getElementById('navBackdrop');
+
+  function setMobileMenu(isOpen) {
+    if (!navLinks) return;
+    if (isOpen) {
+      navLinks.classList.add('open');
+      if (backdrop) backdrop.classList.add('active');
+      if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-times"></i>';
+      document.body.style.overflow = 'hidden';
+    } else {
+      navLinks.classList.remove('open');
+      if (backdrop) backdrop.classList.remove('active');
+      if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      document.body.style.overflow = '';
+    }
+  }
+
   if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = navLinks.classList.contains('open');
-      mobileToggle.innerHTML = isOpen 
-        ? '<i class="fas fa-times"></i>' 
-        : '<i class="fas fa-bars"></i>';
+      setMobileMenu(!isOpen);
     });
+
+    if (backdrop) {
+      backdrop.addEventListener('click', () => {
+        setMobileMenu(false);
+      });
+    }
 
     // Close when clicking nav items
     navItems.forEach(item => {
       item.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        setMobileMenu(false);
       });
     });
 
     // Close on click outside
     document.addEventListener('click', (e) => {
       if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target) && navLinks.classList.contains('open')) {
-        navLinks.classList.remove('open');
-        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        setMobileMenu(false);
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        setMobileMenu(false);
       }
     });
   }
