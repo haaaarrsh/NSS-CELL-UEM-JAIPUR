@@ -376,28 +376,32 @@ ul {
 }
 
 .hero-logo-wrapper {
-  width: 125px;
-  height: 125px;
+  width: 170px;
+  height: 120px;
   background: #ffffff;
-  padding: 10px;
-  border-radius: 50%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(241, 196, 15, 0.35);
-  border: 3.5px solid var(--nss-gold);
+  padding: 12px 16px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(241, 196, 15, 0.25);
+  border: 2.5px solid var(--nss-gold);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--transition);
 }
 
 .hero-logo-wrapper.center-logo {
-  width: 145px;
-  height: 145px;
+  width: 195px;
+  height: 128px;
+  padding: 12px 20px;
   border-color: #ffffff;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55), 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 .hero-logo-wrapper img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
 }
 
@@ -2117,13 +2121,16 @@ textarea.form-control {
   }
 
   .hero-logo-wrapper {
-    width: 90px;
-    height: 90px;
+    width: 125px;
+    height: 85px;
+    padding: 8px 10px;
+    border-radius: 10px;
   }
 
   .hero-logo-wrapper.center-logo {
-    width: 110px;
-    height: 110px;
+    width: 145px;
+    height: 92px;
+    padding: 8px 12px;
   }
 
   .tier-grid-2,
