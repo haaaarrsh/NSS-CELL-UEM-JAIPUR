@@ -649,14 +649,30 @@ ul {
 }
 
 .nss-emblem-large {
-  width: 320px;
-  height: 320px;
+  width: 400px;
+  height: 400px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
   background: #ffffff;
-  padding: 20px;
-  border-radius: 50%;
-  box-shadow: var(--shadow-xl);
-  border: 6px solid var(--nss-gold);
+  padding: 24px;
+  border-radius: 28px;
+  box-shadow: 0 16px 45px rgba(11, 37, 69, 0.16), 0 0 35px rgba(241, 196, 15, 0.25);
+  border: 5px solid var(--nss-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation: pulseGold 4s infinite ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nss-emblem-large:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.nss-emblem-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 @keyframes pulseGold {
