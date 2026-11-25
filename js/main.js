@@ -5,7 +5,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
-  initEventFilters();
   initGalleryMarqueeClones();
   initGalleryLightbox();
   initContactForm();
@@ -108,34 +107,6 @@ function initNavbar() {
   sections.forEach(section => observer.observe(section));
 }
 
-/**
- * 2. EVENTS TAB FILTERING (All, Past, Upcoming)
- */
-function initEventFilters() {
-  const tabBtns = document.querySelectorAll('.event-tab-btn');
-  const eventCards = document.querySelectorAll('.event-card');
-
-  if (!tabBtns.length) return;
-
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-
-      eventCards.forEach(card => {
-        const status = card.getAttribute('data-status');
-        if (filter === 'all' || status === filter) {
-          card.style.display = 'flex';
-          card.style.animation = 'fadeIn 0.4s ease';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-}
 
 
 /**
