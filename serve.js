@@ -2,6 +2,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
 const PORT = process.env.PORT || 3000;
 
@@ -16,7 +17,8 @@ const MIME_TYPES = {
   '.jpeg': 'image/jpeg',
   '.webp': 'image/webp',
   '.gif': 'image/gif',
-  '.ico': 'image/x-icon'
+  '.ico': 'image/x-icon',
+  '.mp4': 'video/mp4'
 };
 
 const server = http.createServer((req, res) => {
@@ -28,7 +30,7 @@ const server = http.createServer((req, res) => {
   const ext = path.extname(filePath).toLowerCase();
   const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
-  fs.readFile(filePath, (err, content) => {
+  fs.stat(filePath, (err, stats) => {
     if (err) {
       if (err.code === 'ENOENT') {
         res.writeHead(404, { 'Content-Type': 'text/html' });
@@ -37,21 +39,44 @@ const server = http.createServer((req, res) => {
         res.writeHead(500, { 'Content-Type': 'text/html' });
         res.end(`<h1>500 Internal Server Error</h1><p>${err.code}</p>`);
       }
+      return;
+    }
+
+    if (stats.isDirectory()) {
+      res.writeHead(403, { 'Content-Type': 'text/html' });
+      res.end('<h1>403 Forbidden</h1>');
+      return;
+    }
+
+    // Support HTTP Range Requests (essential for HTML5 video streaming)
+    const range = req.headers.range;
+    if (range && ext === '.mp4') {
+      const parts = range.replace(/bytes=/, '').split('-');
+      const start = parseInt(parts[0], 10);
+      const end = parts[1] ? parseInt(parts[1], 10) : stats.size - 1;
+      const chunksize = (end - start) + 1;
+      const file = fs.createReadStream(filePath, { start, end });
+      res.writeHead(206, {
+        'Content-Range': `bytes ${start}-${end}/${stats.size}`,
+        'Accept-Ranges': 'bytes',
+        'Content-Length': chunksize,
+        'Content-Type': contentType,
+      });
+      file.pipe(res);
     } else {
       res.writeHead(200, { 
+        'Content-Length': stats.size,
         'Content-Type': contentType,
+        'Accept-Ranges': 'bytes',
         'Cache-Control': 'no-cache'
       });
-      res.end(content);
+      fs.createReadStream(filePath).pipe(res);
     }
   });
 });
 
-const os = require('os');
-
 function getLocalIp() {
   const nets = os.networkInterfaces();
-  // Prefer Wi-Fi
   if (nets['Wi-Fi']) {
     for (const net of nets['Wi-Fi']) {
       if (net.family === 'IPv4' && !net.internal) return net.address;
