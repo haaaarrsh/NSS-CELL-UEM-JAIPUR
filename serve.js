@@ -14,12 +14,14 @@ const MIME_TYPES = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
   '.gif': 'image/gif',
   '.ico': 'image/x-icon'
 };
 
 const server = http.createServer((req, res) => {
-  let safePath = req.url.split('?')[0];
+  let rawPath = req.url.split('?')[0];
+  let safePath = decodeURIComponent(rawPath);
   if (safePath === '/' || safePath === '') safePath = '/index.html';
   
   const filePath = path.join(__dirname, safePath);
