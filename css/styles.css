@@ -349,6 +349,71 @@ ul {
   box-shadow: 0 10px 20px rgba(230, 57, 70, 0.35);
 }
 
+/* Header Social Media Icons (replaces Join Us button) */
+.nav-social-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.4rem;
+  flex-shrink: 0;
+}
+
+.nav-social-link {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  background: var(--bg-tertiary);
+  color: var(--nss-blue);
+  border: 1px solid rgba(11, 37, 69, 0.1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.nav-social-link:hover {
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.nav-social-instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  border-color: transparent;
+  box-shadow: 0 4px 10px rgba(214, 36, 159, 0.4);
+}
+
+.nav-social-linkedin:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+  box-shadow: 0 4px 10px rgba(0, 119, 181, 0.4);
+}
+
+.nav-social-youtube:hover {
+  background: #ff0000;
+  border-color: #ff0000;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+}
+
+.nav-social-x:hover {
+  background: #000000;
+  border-color: #000000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.nav-social-facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+  box-shadow: 0 4px 10px rgba(24, 119, 242, 0.4);
+}
+
+.nav-social-whatsapp:hover {
+  background: #25d366;
+  border-color: #25d366;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+}
+
 /* Mobile Toggle Hamburger */
 .mobile-nav-toggle {
   display: none;
@@ -1915,6 +1980,7 @@ ul {
   grid-template-columns: 1.1fr 0.9fr;
   gap: 3rem;
   margin-top: 2rem;
+  align-items: stretch;
 }
 
 .map-wrapper {
@@ -1925,6 +1991,7 @@ ul {
   border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .map-header {
@@ -1934,6 +2001,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-shrink: 0;
 }
 
 .map-header h4 {
@@ -1947,14 +2015,19 @@ ul {
 
 .map-iframe-container {
   width: 100%;
-  height: 400px;
+  flex: 1 1 auto;
+  min-height: 480px;
   position: relative;
+  display: flex;
 }
 
 .map-iframe-container iframe {
   width: 100%;
   height: 100%;
+  min-height: 100%;
   border: 0;
+  flex: 1 1 auto;
+  display: block;
 }
 
 /* Contact Up Form Box with Google Form Link */
@@ -2573,6 +2646,22 @@ textarea.form-control {
     font-size: 0.95rem;
   }
 
+  .nav-social-icons {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1.25rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(11, 37, 69, 0.08);
+    gap: 0.65rem;
+    margin-left: 0;
+  }
+
+  .nav-social-link {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+
   /* Hero Section Alignment */
   .hero-section {
     padding: calc(var(--nav-height) + 1.5rem) 1rem 3rem 1rem;
@@ -3103,7 +3192,8 @@ textarea.form-control {
   }
 
   .map-iframe-container {
-    height: 260px;
+    height: 320px;
+    min-height: 320px;
   }
 
   .contact-form-box {
