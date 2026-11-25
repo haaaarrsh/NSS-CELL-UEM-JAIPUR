@@ -1168,6 +1168,23 @@ ul {
   gap: 1.8rem;
 }
 
+/* Tier: Tech Team (5 members in a single row on desktop) */
+.tier-grid-tech {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.25rem;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.tier-grid-tech .member-name {
+  font-size: 1.05rem;
+}
+
+.tier-grid-tech .member-designation {
+  font-size: 0.8rem;
+}
+
 /* Tier 5: Department Members */
 .tier-grid-members {
   display: grid;
@@ -2982,6 +2999,29 @@ textarea.form-control {
     gap: 0.65rem;
   }
 
+  /* Tech Team: 3 in row 1, 2 in row 2 on mobile */
+  .tier-grid-tech {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.65rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .tier-grid-tech .member-card:nth-child(1),
+  .tier-grid-tech .member-card:nth-child(2),
+  .tier-grid-tech .member-card:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .tier-grid-tech .member-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .tier-grid-tech .member-card:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+
   .member-details-box {
     padding: 0.75rem 0.35rem;
   }
@@ -3508,6 +3548,10 @@ textarea.form-control {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.32rem;
     max-width: 100%;
+  }
+
+  .tier-grid-tech {
+    gap: 0.32rem;
   }
 
   .member-card {
