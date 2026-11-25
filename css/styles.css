@@ -1986,15 +1986,19 @@ ul {
   background: linear-gradient(135deg, rgba(230, 57, 70, 0.08), rgba(247, 127, 0, 0.08));
   border: 2px dashed var(--nss-red);
   border-radius: var(--radius-md);
-  padding: 2.5rem 1.8rem;
+  padding: 1.6rem 1.4rem;
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 1.2rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+}
+
+.google-form-highlight-card:last-child {
+  margin-bottom: 0;
 }
 
 .google-form-highlight-card:hover {
@@ -2004,18 +2008,21 @@ ul {
 
 .google-form-highlight-card h5 {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--nss-blue);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .google-form-highlight-card p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   max-width: 440px;
-  margin-bottom: 1.8rem;
-  line-height: 1.6;
+  margin-bottom: 1.1rem;
+  line-height: 1.5;
 }
 
 .btn-google-form {
@@ -2024,10 +2031,10 @@ ul {
   gap: 0.7rem;
   background: var(--nss-red);
   color: #ffffff;
-  padding: 0.85rem 2.2rem;
+  padding: 0.75rem 1.8rem;
   border-radius: var(--radius-full);
   font-family: var(--font-subheading);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 800;
   box-shadow: var(--shadow-red);
   transition: var(--transition);
@@ -2037,6 +2044,31 @@ ul {
   background: var(--nss-red-dark);
   transform: translateY(-3px);
   box-shadow: 0 12px 24px rgba(230, 57, 70, 0.45);
+}
+
+/* Volunteer Registration Form Card */
+.google-form-highlight-card.volunteer-form-card {
+  background: linear-gradient(135deg, rgba(42, 157, 143, 0.08), rgba(29, 53, 87, 0.08));
+  border-color: var(--uba-green);
+}
+
+.google-form-highlight-card.volunteer-form-card:hover {
+  background: linear-gradient(135deg, rgba(42, 157, 143, 0.14), rgba(29, 53, 87, 0.12));
+  border-color: var(--uba-green-dark);
+}
+
+.google-form-highlight-card.volunteer-form-card h5 {
+  color: #1b4332;
+}
+
+.btn-volunteer-form {
+  background: var(--uba-green);
+  box-shadow: 0 4px 15px rgba(42, 157, 143, 0.35);
+}
+
+.btn-volunteer-form:hover {
+  background: var(--uba-green-dark);
+  box-shadow: 0 12px 24px rgba(42, 157, 143, 0.45);
 }
 
 /* Built-in Instant Query Form */
@@ -3083,16 +3115,17 @@ textarea.form-control {
   }
 
   .google-form-highlight-card {
-    padding: 2rem 1.2rem;
+    padding: 1.4rem 1rem;
+    margin-bottom: 1rem;
   }
 
   .google-form-highlight-card h5 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .google-form-highlight-card p {
     font-size: 0.88rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .btn-google-form {
