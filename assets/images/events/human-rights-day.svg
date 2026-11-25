@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg_human_rights" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a0e4e" />
+      <stop offset="50%" stop-color="#1d3557" />
+      <stop offset="100%" stop-color="#0b2545" />
+    </linearGradient>
+    <filter id="f_hr" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="18" fill="url(#bg_human_rights)"/>
+
+  <!-- Decorative Pattern Overlay -->
+  <g opacity="0.12" stroke="#ffffff" stroke-width="2">
+    <circle cx="300" cy="200" r="130" fill="none"/>
+    <circle cx="100" cy="100" r="70" fill="none"/>
+    <circle cx="500" cy="300" r="90" fill="none"/>
+    <line x1="0" y1="200" x2="600" y2="200"/>
+    <line x1="300" y1="0" x2="300" y2="400"/>
+  </g>
+
+  <!-- Top Badge Pill -->
+  <rect x="40" y="32" width="220" height="34" rx="17" fill="#ffffff" opacity="0.95" filter="url(#f_hr)"/>
+  <text x="150" y="54" font-family="'Montserrat', sans-serif" font-size="11" font-weight="800" fill="#4a0e4e" text-anchor="middle" letter-spacing="1">
+    ★ EQUALITY &amp; JUSTICE ★
+  </text>
+
+  <!-- Large Center Graphic Symbol -->
+  <g transform="translate(300, 185) scale(1.6)" text-anchor="middle">
+    <circle cx="0" cy="0" r="45" fill="#ffffff" opacity="0.18"/>
+    <circle cx="0" cy="0" r="35" fill="#ffffff" opacity="0.95" filter="url(#f_hr)"/>
+    <text x="0" y="13" font-size="34" text-anchor="middle">⚖️</text>
+  </g>
+
+  <!-- Lower Title Card Backdrop with Glassmorphism -->
+  <rect x="30" y="280" width="540" height="92" rx="14" fill="#0b1d3a" opacity="0.92" filter="url(#f_hr)"/>
+  <text x="50" y="320" font-family="'Poppins', sans-serif" font-size="20" font-weight="800" fill="#ffffff">
+    Human Rights Day Observance
+  </text>
+  <text x="50" y="348" font-family="'Inter', sans-serif" font-size="12.5" font-weight="600" fill="#f1c40f">
+    Dignity, Freedom &amp; Justice For All • UEM Jaipur NSS Cell
+  </text>
+  <text x="540" y="334" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#e2afff" text-anchor="end">
+    10 Dec 2026
+  </text>
+</svg>

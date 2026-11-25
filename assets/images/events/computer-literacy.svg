@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg_comp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0077b6" />
+      <stop offset="60%" stop-color="#023e8a" />
+      <stop offset="100%" stop-color="#03045e" />
+    </linearGradient>
+    <filter id="f_comp" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="18" fill="url(#bg_comp)"/>
+
+  <!-- Decorative Pattern Overlay -->
+  <g opacity="0.1" stroke="#ffffff" stroke-width="2">
+    <rect x="50" y="50" width="500" height="300" rx="12" fill="none"/>
+    <circle cx="120" cy="120" r="70" fill="none"/>
+    <circle cx="480" cy="280" r="100" fill="none"/>
+    <line x1="0" y1="200" x2="600" y2="200"/>
+    <line x1="300" y1="0" x2="300" y2="400"/>
+  </g>
+
+  <!-- Top Badge Pill -->
+  <rect x="40" y="32" width="220" height="34" rx="17" fill="#ffffff" opacity="0.95" filter="url(#f_comp)"/>
+  <text x="150" y="54" font-family="'Montserrat', sans-serif" font-size="11" font-weight="800" fill="#03045e" text-anchor="middle" letter-spacing="1">
+    ★ DIGITAL EMPOWERMENT ★
+  </text>
+
+  <!-- Large Center Graphic Symbol -->
+  <g transform="translate(300, 185) scale(1.6)" text-anchor="middle">
+    <circle cx="0" cy="0" r="45" fill="#ffffff" opacity="0.18"/>
+    <circle cx="0" cy="0" r="35" fill="#ffffff" opacity="0.95" filter="url(#f_comp)"/>
+    <text x="0" y="13" font-size="34" text-anchor="middle">💻</text>
+  </g>
+
+  <!-- Lower Title Card Backdrop with Glassmorphism -->
+  <rect x="30" y="280" width="540" height="92" rx="14" fill="#0b1d3a" opacity="0.92" filter="url(#f_comp)"/>
+  <text x="50" y="320" font-family="'Poppins', sans-serif" font-size="20" font-weight="800" fill="#ffffff">
+    World Computer Literacy Day
+  </text>
+  <text x="50" y="348" font-family="'Inter', sans-serif" font-size="12.5" font-weight="600" fill="#00b4d8">
+    Rural Digital Awareness &amp; Cyber Literacy Mission • NSS UEMJ
+  </text>
+  <text x="540" y="334" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#caf0f8" text-anchor="end">
+    02 Dec 2026
+  </text>
+</svg>
