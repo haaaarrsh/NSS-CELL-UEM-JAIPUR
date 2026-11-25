@@ -1079,6 +1079,14 @@ ul {
   gap: 1.5rem;
 }
 
+/* Tier 6: Past Members */
+.tier-grid-past {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+  justify-content: center;
+  gap: 2rem;
+}
+
 /* Universal Member Card Component */
 .member-card {
   background: #ffffff;
@@ -2799,6 +2807,14 @@ textarea.form-control {
     gap: 0.85rem;
   }
 
+  .tier-grid-past {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 300px));
+    justify-content: center;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 0.85rem;
+  }
+
   .tier-grid-exec,
   .tier-grid-heads,
   .tier-grid-members {
@@ -3243,6 +3259,14 @@ textarea.form-control {
     gap: 0.45rem;
     max-width: 270px;
     margin: 0 auto;
+  }
+
+  .tier-grid-past {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 240px));
+    justify-content: center;
+    max-width: 240px;
+    margin: 0 auto;
+    gap: 0.45rem;
   }
 
   .tier-grid-exec,
