@@ -1236,12 +1236,12 @@ ul {
   animation: slideVolLTR linear infinite;
 }
 
-/* Row Animation Durations for asynchronous, organic flow */
-.speed-64s .vol-track { animation-duration: 64s; }
-.speed-68s .vol-track { animation-duration: 68s; }
-.speed-70s .vol-track { animation-duration: 70s; }
-.speed-76s .vol-track { animation-duration: 76s; }
-.speed-78s .vol-track { animation-duration: 78s; }
+/* Row Animation Durations for gentle, easily readable, relaxed motion */
+.speed-64s .vol-track { animation-duration: 135s; }
+.speed-68s .vol-track { animation-duration: 145s; }
+.speed-70s .vol-track { animation-duration: 150s; }
+.speed-76s .vol-track { animation-duration: 160s; }
+.speed-78s .vol-track { animation-duration: 168s; }
 
 /* Pause on hover so names can be read easily */
 .vol-marquee-row:hover .vol-track {
@@ -1731,17 +1731,17 @@ ul {
 
 /* Row 1: Slides LEFT */
 .marquee-slide-left .marquee-track {
-  animation: slideMarqueeLeft 35s linear infinite;
+  animation: slideMarqueeLeft 55s linear infinite;
 }
 
 /* Row 2: Slides RIGHT */
 .marquee-slide-right .marquee-track {
-  animation: slideMarqueeRight 35s linear infinite;
+  animation: slideMarqueeRight 55s linear infinite;
 }
 
 /* Row 3: Slides LEFT */
 .marquee-slide-left-bottom .marquee-track {
-  animation: slideMarqueeLeft 38s linear infinite;
+  animation: slideMarqueeLeft 58s linear infinite;
 }
 
 /* Pause animation on hover */
