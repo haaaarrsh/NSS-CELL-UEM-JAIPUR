@@ -6,7 +6,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initEventFilters();
-  initCalendarMonthTabs();
   initGalleryMarqueeClones();
   initGalleryLightbox();
   initContactForm();
@@ -138,34 +137,6 @@ function initEventFilters() {
   });
 }
 
-/**
- * 3. NSS CALENDAR - MONTH SWITCHER
- */
-function initCalendarMonthTabs() {
-  const monthBtns = document.querySelectorAll('.month-btn');
-  const monthCards = document.querySelectorAll('.month-schedule-card');
-
-  if (!monthBtns.length) return;
-
-  monthBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      monthBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const targetMonth = btn.getAttribute('data-month');
-
-      monthCards.forEach(card => {
-        const cardMonth = card.getAttribute('data-month');
-        if (targetMonth === 'all' || cardMonth === targetMonth) {
-          card.style.display = 'block';
-          card.style.animation = 'fadeIn 0.3s ease';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-}
 
 /**
  * 4. PHOTO GALLERY MARQUEE SEAMLESS CLONING
