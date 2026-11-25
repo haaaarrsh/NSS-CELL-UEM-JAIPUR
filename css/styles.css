@@ -1177,12 +1177,14 @@ ul {
   margin: 0 auto;
 }
 
-.tier-grid-tech .member-name {
-  font-size: 1.05rem;
-}
+@media (min-width: 769px) {
+  .tier-grid-tech .member-name {
+    font-size: 1.05rem;
+  }
 
-.tier-grid-tech .member-designation {
-  font-size: 0.8rem;
+  .tier-grid-tech .member-designation {
+    font-size: 0.8rem;
+  }
 }
 
 /* Tier 5: Department Members */
@@ -3022,6 +3024,14 @@ textarea.form-control {
     grid-column: 4 / span 2;
   }
 
+  .tier-grid-tech .member-name {
+    font-size: 0.86rem;
+  }
+
+  .tier-grid-tech .member-designation {
+    font-size: 0.7rem;
+  }
+
   .member-details-box {
     padding: 0.75rem 0.35rem;
   }
@@ -3552,6 +3562,14 @@ textarea.form-control {
 
   .tier-grid-tech {
     gap: 0.32rem;
+  }
+
+  .tier-grid-tech .member-name {
+    font-size: 0.72rem;
+  }
+
+  .tier-grid-tech .member-designation {
+    font-size: 0.56rem;
   }
 
   .member-card {
