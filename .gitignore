@@ -2,5 +2,3 @@ scratch/
 node_modules/
 .DS_Store
 Thumbs.db
-assets/videos/*.mp4
-assets/videos/*.MP4
