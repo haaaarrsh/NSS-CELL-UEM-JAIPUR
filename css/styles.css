@@ -237,23 +237,27 @@ ul {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  max-width: 1400px;
 }
 
 .brand-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.65rem;
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
 .brand-logos-mini {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.45rem;
+  flex-shrink: 0;
 }
 
 .brand-logos-mini img {
-  height: 48px;
-  max-width: 60px;
+  height: 40px;
+  max-width: 50px;
   width: auto;
   object-fit: contain;
   transition: transform 0.2s ease;
@@ -266,38 +270,44 @@ ul {
 .brand-text-block {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .brand-title {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--nss-blue);
-  letter-spacing: 0.5px;
-  line-height: 1.2;
+  letter-spacing: 0.4px;
+  line-height: 1.15;
+  white-space: nowrap;
 }
 
 .brand-subtitle {
   font-family: var(--font-subheading);
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.65rem;
+  font-weight: 700;
   color: var(--nss-red);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.35px;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.15rem;
+  gap: 0.8rem;
   flex-wrap: nowrap;
 }
 
 .nav-item {
   font-family: var(--font-subheading);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-secondary);
-  padding: 0.5rem 0.2rem;
+  padding: 0.45rem 0.15rem;
   position: relative;
   white-space: nowrap;
   transition: var(--transition);
@@ -353,19 +363,19 @@ ul {
 .nav-social-icons {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  margin-left: 0.4rem;
+  gap: 0.25rem;
+  margin-left: 0.35rem;
   flex-shrink: 0;
 }
 
 .nav-social-link {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   background: var(--bg-tertiary);
   color: var(--nss-blue);
   border: 1px solid rgba(11, 37, 69, 0.1);
@@ -412,6 +422,30 @@ ul {
   background: #25d366;
   border-color: #25d366;
   box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+}
+
+@media (min-width: 992px) and (max-width: 1260px) {
+  .nav-links {
+    gap: 0.5rem;
+  }
+  .nav-item {
+    font-size: 0.82rem;
+  }
+  .brand-title {
+    font-size: 0.95rem;
+  }
+  .brand-subtitle {
+    font-size: 0.6rem;
+  }
+  .brand-logos-mini img {
+    height: 34px;
+    max-width: 42px;
+  }
+  .nav-social-link {
+    width: 25px;
+    height: 25px;
+    font-size: 0.7rem;
+  }
 }
 
 /* Mobile Toggle Hamburger */
@@ -1310,11 +1344,11 @@ ul {
 }
 
 /* Row Animation Durations for gentle, easily readable, relaxed motion */
-.speed-64s .vol-track { animation-duration: 135s; }
-.speed-68s .vol-track { animation-duration: 145s; }
-.speed-70s .vol-track { animation-duration: 150s; }
-.speed-76s .vol-track { animation-duration: 160s; }
-.speed-78s .vol-track { animation-duration: 168s; }
+.speed-64s .vol-track { animation-duration: 230s; }
+.speed-68s .vol-track { animation-duration: 245s; }
+.speed-70s .vol-track { animation-duration: 260s; }
+.speed-76s .vol-track { animation-duration: 275s; }
+.speed-78s .vol-track { animation-duration: 290s; }
 
 /* Pause on hover so names can be read easily */
 .vol-marquee-row:hover .vol-track {
@@ -2678,7 +2712,7 @@ textarea.form-control {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
     width: 100%;
     max-width: 380px;
@@ -2694,6 +2728,7 @@ textarea.form-control {
     flex-direction: column;
     align-items: center;
     gap: 0.35rem;
+    overflow: hidden;
   }
 
   .hero-logo-wrapper {
@@ -2710,9 +2745,14 @@ textarea.form-control {
   }
 
   .hero-logo-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
+    font-size: 0.65rem;
+    letter-spacing: 0.2px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.15;
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   .hero-title-main {
@@ -3068,21 +3108,90 @@ textarea.form-control {
     font-size: 0.85rem;
   }
 
+  /* Events Section: 3 events in same row on mobile */
   .events-display-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+    max-width: 100%;
+  }
+
+  .event-card {
+    border-radius: 8px;
+  }
+
+  .event-poster-wrapper {
+    aspect-ratio: 16 / 11;
+  }
+
+  .event-status-badge {
+    top: 4px;
+    left: 4px;
+    font-size: 0.44rem;
+    padding: 0.12rem 0.32rem;
+    letter-spacing: 0;
   }
 
   .event-details-body {
-    padding: 1.25rem 1rem;
+    padding: 0.45rem 0.22rem;
+  }
+
+  .event-meta-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+    font-size: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .event-meta-info span {
+    gap: 0.2rem;
+    line-height: 1.15;
+  }
+
+  .event-meta-info i {
+    font-size: 0.48rem;
   }
 
   .event-title {
-    font-size: 1.15rem;
+    font-size: 0.68rem;
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .event-desc {
-    font-size: 0.88rem;
+    font-size: 0.54rem;
+    line-height: 1.25;
+    margin-bottom: 0.35rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .event-card-footer {
+    padding-top: 0.3rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .event-card-footer span {
+    font-size: 0.5rem !important;
+    line-height: 1.15;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .btn-event-action {
+    font-size: 0.54rem;
+    padding: 0.12rem 0.35rem;
+    gap: 0.2rem;
   }
 
   /* Photo Gallery (Cinematic Dark Marquee) */
@@ -3312,8 +3421,8 @@ textarea.form-control {
 
   /* Hero 3 Logos on Small Phones */
   .hero-logos-container {
-    gap: 0.45rem;
-    max-width: 330px;
+    gap: 0.35rem;
+    max-width: 340px;
     margin-bottom: 1.2rem;
   }
 
@@ -3329,7 +3438,11 @@ textarea.form-control {
   }
 
   .hero-logo-label {
-    font-size: 0.62rem;
+    font-size: 0.58rem;
+    letter-spacing: 0;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.15;
   }
 
   .hero-title-main {
