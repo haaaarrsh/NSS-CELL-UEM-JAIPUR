@@ -1049,10 +1049,10 @@ ul {
   gap: 2.5rem;
 }
 
-/* Tier 2: President & VP (2 columns centered) */
+/* Tier 2: President & Vice-Presidents (3 columns centered on desktop) */
 .tier-grid-exec {
   display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 400px));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
   justify-content: center;
   gap: 2.5rem;
 }
