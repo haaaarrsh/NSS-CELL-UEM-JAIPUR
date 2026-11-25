@@ -45,11 +45,33 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
+const os = require('os');
+
+function getLocalIp() {
+  const nets = os.networkInterfaces();
+  // Prefer Wi-Fi
+  if (nets['Wi-Fi']) {
+    for (const net of nets['Wi-Fi']) {
+      if (net.family === 'IPv4' && !net.internal) return net.address;
+    }
+  }
+  for (const name of Object.keys(nets)) {
+    for (const net of nets[name]) {
+      if (net.family === 'IPv4' && !net.internal && !name.toLowerCase().includes('virtual') && net.address !== '192.168.56.1') {
+        return net.address;
+      }
+    }
+  }
+  return '192.168.68.104';
+}
+
+server.listen(PORT, '0.0.0.0', () => {
+  const localIp = getLocalIp();
   console.log(`\n======================================================`);
   console.log(`  NSS CELL UEM JAIPUR Website Running Successfully!   `);
   console.log(`======================================================`);
-  console.log(`  Local URL:   http://localhost:${PORT}`);
-  console.log(`  Network:     http://127.0.0.1:${PORT}`);
+  console.log(`  On This PC:   http://localhost:${PORT}`);
+  console.log(`  On Other Devices (Same Wi-Fi):`);
+  console.log(`                http://${localIp}:${PORT}`);
   console.log(`\n  Press Ctrl+C to stop the server.\n`);
 });
