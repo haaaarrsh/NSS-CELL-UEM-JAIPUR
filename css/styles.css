@@ -2089,6 +2089,7 @@ ul {
   border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
+  scroll-margin-top: calc(var(--nav-height) + 20px);
 }
 
 .contact-form-box h4 {

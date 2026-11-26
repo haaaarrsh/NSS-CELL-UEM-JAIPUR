@@ -60,7 +60,8 @@ function initNavbar() {
     }
 
     // Close when clicking nav items
-    navItems.forEach(item => {
+    const navClickables = document.querySelectorAll('.nav-item, .nav-cta-btn');
+    navClickables.forEach(item => {
       item.addEventListener('click', () => {
         setMobileMenu(false);
       });
